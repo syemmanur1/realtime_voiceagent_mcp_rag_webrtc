@@ -1,0 +1,11 @@
+Flask>=3.0.0
+gunicorn>=21.2.0
+torch>=2.0.0
+transformers>=4.38.0
+chatterbox-tts
+# Required by Whisper for audio processing
+librosa
+soundfile
+# Added for Google Cloud integration
+google-cloud-speech>=2.25.0
+google-cloud-texttospeech>=2.16.2

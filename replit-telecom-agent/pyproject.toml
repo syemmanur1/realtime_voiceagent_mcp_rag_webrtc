@@ -1,0 +1,20 @@
+# telecom_agent/pyproject.toml
+[tool.poetry]
+name = "telecom-agent-logic"
+version = "1.0.0"
+description = "Core logic and RAG pipeline for the telecom agent."
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.0"
+google-generativeai = "^0.5.4"
+chromadb = "^0.4.24"
+whoosh = "^2.7.4"
+werkzeug = "^3.0.1"
+gunicorn = "^21.2.0"
+requests = "^2.31.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

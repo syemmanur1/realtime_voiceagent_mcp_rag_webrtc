@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Voice Agent Test</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        #container { background: white; padding: 2rem 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #1a73e8; }
+        p { max-width: 400px; color: #5f6368; }
+        button {
+            background-color: #1a73e8; color: white; border: none; padding: 12px 24px;
+            font-size: 16px; border-radius: 8px; cursor: pointer; transition: background-color 0.3s, transform 0.1s;
+            margin-top: 1rem;
+        }
+        button:hover { background-color: #185abc; }
+        button:active { transform: scale(0.98); }
+        #status {
+            margin-top: 1.5rem; padding: 10px; border-radius: 8px; font-weight: bold;
+            min-width: 200px; transition: background-color 0.3s, color 0.3s;
+        }
+        .status-connecting { background-color: #fef7e0; color: #b56f00; }
+        .status-connected { background-color: #e6f4ea; color: #1e8e3e; }
+        .status-disconnected { background-color: #fce8e6; color: #d93025; }
+        .status-listening { background-color: #e8f0fe; color: #1967d2; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Real-Time Voice Agent</h1>
+        <p>Click "Start Session" to connect to the agent. You will need to grant microphone permissions.</p>
+        <button id="startButton">Start Session</button>
+        <div id="status" class="status-disconnected">Disconnected</div>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const statusDiv = document.getElementById('status');
+        const websocketUrl = 'YOUR_REPLIT_WEBSOCKET_URL_HERE'; // <-- IMPORTANT: CHANGE THIS
+
+        let pc = null;
+        let ws = null;
+        let audioContext = null;
+        let audioDestination = null;
+
+        function setStatus(text, className) {
+            statusDiv.textContent = text;
+            statusDiv.className = 'status-' + className;
+        }
+
+        async function startSession() {
+            if (websocketUrl.includes('YOUR_REPLIT_WEBSOCKET_URL_HERE')) {
+                alert('Error: Please set the websocketUrl in the HTML file first.');
+                return;
+            }
+
+            startButton.disabled = true;
+            setStatus('Connecting...', 'connecting');
+
+            pc = new RTCPeerConnection();
+            ws = new WebSocket(websocketUrl);
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            audioDestination = audioContext.createMediaStreamDestination();
+
+            ws.onopen = () => {
+                console.log('WebSocket connected.');
+                setStatus('Connected', 'connected');
+                negotiate();
+            };
+
+            ws.onmessage = async (event) => {
+                const message = JSON.parse(event.data);
+                if (message.sdp) {
+                    try {
+                        await pc.setRemoteDescription(message);
+                    } catch (e) {
+                        console.error('Error setting remote description:', e);
+                    }
+                } else if (event.data instanceof Blob || event.data instanceof ArrayBuffer) {
+                    // This handles incoming audio chunks if the server sends them this way
+                    playAudio(event.data);
+                }
+            };
+            
+            // This is the primary handler for the incoming audio stream
+            ws.onmessage = (event) => {
+                if(typeof(event.data) === "string"){
+                    const message = JSON.parse(event.data);
+                    if (message.sdp) {
+                         pc.setRemoteDescription(message);
+                    }
+                } else {
+                     playAudio(event.data)
+                }
+            }
+
+
+            ws.onclose = () => {
+                console.log('WebSocket disconnected.');
+                setStatus('Disconnected', 'disconnected');
+                startButton.disabled = false;
+            };
+
+            pc.ontrack = (event) => {
+                console.log('Received remote track');
+                // This is less common for bot-to-client audio, but handled just in case
+                const remoteStream = new MediaStream();
+                remoteStream.addTrack(event.track);
+                const audioPlayer = new Audio();
+                audioPlayer.srcObject = remoteStream;
+                audioPlayer.play();
+            };
+        }
+
+        async function negotiate() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                stream.getTracks().forEach(track => pc.addTrack(track, stream));
+
+                const offer = await pc.createOffer();
+                await pc.setLocalDescription(offer);
+
+                ws.send(JSON.stringify({ sdp: pc.localDescription.sdp, type: pc.localDescription.type }));
+                setStatus('Listening...', 'listening');
+            } catch (err) {
+                console.error('Error during negotiation:', err);
+                setStatus('Mic Error', 'disconnected');
+                alert('Could not start session. Please allow microphone access.');
+                ws.close();
+            }
+        }
+        
+        async function playAudio(audioData) {
+            const arrayBuffer = await new Response(audioData).arrayBuffer();
+            audioContext.decodeAudioData(arrayBuffer, (buffer) => {
+                const source = audioContext.createBufferSource();
+                source.buffer = buffer;
+                source.connect(audioContext.destination);
+                source.start(0);
+            }, (err) => console.error('Error decoding audio:', err));
+        }
+
+        startButton.addEventListener('click', startSession);
+    </script>
+</body>
+</html>
