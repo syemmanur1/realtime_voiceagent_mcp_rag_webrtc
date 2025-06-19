@@ -50,6 +50,8 @@ mcp_server: The optional, heavy-lifting service for hosting your own AI models f
 telecom_agent: The core application that contains the agentic RAG pipeline and conversational logic.
 android_client: The native Android application that the end-user interacts with.
 
+https://docs.google.com/document/d/1hvfff2dgJmmAojzIb9qikhdiYlbY3NS354Cxzue_3Tg/edit?usp=sharing
+
 Real-Time Telecom Voice Agent
 
 This project is a complete, production-ready framework for building a real-time, streaming conversational AI voice agent. It is designed for telecom customer support, featuring a sophisticated Retrieval-Augmented Generation (RAG) pipeline for knowledge base integration, but is extensible to any domain. The architecture is modular, scalable, and optimized for low-latency interactions, providing a flexible choice between cloud-based AI services and self-hosted models.
