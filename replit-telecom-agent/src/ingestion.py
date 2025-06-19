@@ -56,7 +56,10 @@ def run_ingestion():
             with open(os.path.join(KB_METADATA_PATH, fname), 'r') as f:
                 for line in f:
                     meta = json.loads(line)
-                    metadata_map[meta['doc_id']] = meta
+                    # --- FIX: Changed 'doc_id' to 'id' to match sample data ---
+                    doc_id = meta.get('id') 
+                    if doc_id:
+                        metadata_map[doc_id] = meta
 
     # 4. Process and Embed Documents
     all_chunks = []
