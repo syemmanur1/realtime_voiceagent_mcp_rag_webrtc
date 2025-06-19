@@ -1,0 +1,10 @@
+Samsung Galaxy Tab S4 - View / Restrict Data Usage by App Samsung Galaxy Tab S4 - View / Restrict Data Usage by App Here's how to view / restrict the amount of data an app on your Galaxy Tab S4 uses. Some apps need background data. Restricting data may cause them not to work without a Wi-Fi connection.
+
+1. Open the Settings app .
+2. Navigate: Connections Data usage Mobile data usage .
+3. Select an app (below the usage graph) then view usage graph. To restrict the app from using data in the background, tap the Allow background data usage switch off .
+
+Here's info on setting data limits / warnings and changing the usage cycle on your device.
+Description: This document is about Samsung Galaxy Tab S4 - View / Restrict Data Usage by App. Following are the sku relate to this document:CLNRSAMT837K,SMT837VZKA. Example questions: 'View Restrict Data Usage by App','App won't work','App won't function','Background data','Restrict background data','App stopped working','App stopped functioning'
+
+This document is about Samsung Galaxy Tab S4 - View / Restrict Data Usage by App

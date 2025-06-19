@@ -1,0 +1,17 @@
+BlackBerry Key2 LE - Disable / Enable App BlackBerry® Key2 LE - Disable / Enable App Some pre-installed apps on your Key2 LE are mainstays that can’t be removed. Disabling an app can prevent it from running, while enabling it can return functionality.
+
+1. Tap the Apps icon .
+2. Navigate: Settings Apps & notifications .
+3. Tap See all apps then do one of the following:
+   * Disable Apps Disabling an app may cause related apps to function improperly.
+     1. Tap the applicable app then tap Disable .
+     2. Tap Disable app .
+     3. If the Turn Off option isn't available, tap Force stop .
+     4. Tap OK .
+   * Enable Apps
+     1. Tap the applicable app.
+     2. Tap Enable .
+
+Description: This document is about BlackBerry Key2 LE - Disable / Enable App. Following are the sku relate to this document:CLNRBBKEY2LE,BBKEY2LE-VZW. Example questions: 'Disable Enable App','Troubleshooting device','Apps crash reset the wireless device','Can't find apps','Device freezes locks up unresponsive bricked','Device crashes and resets itself','Extend battery life','Stop running apps','Bloatware','App freezes hangs','Device is running slow'
+
+This document is about BlackBerry Key2 LE - Disable / Enable App

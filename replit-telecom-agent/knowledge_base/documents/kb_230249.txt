@@ -1,0 +1,8 @@
+Samsung Galaxy A01 - Restart Device Samsung Galaxy A01 - Restart Device Here's how to restart your Galaxy A01 if it crashes and resets, freezes or runs slowly.
+
+1. Press and hold the Power on the right edge of the device until options appear. If the device is unresponsive, press and hold the Power button until the device power cycles (approximately 30 seconds) then release. Allow several seconds for the reboot process to complete.
+2. Tap Restart . If your device won't power back on, partially charge the device then retry.
+
+Description: This document is about Samsung Galaxy A01 - Restart Device. Following are the sku relate to this document:SMA015VZKVZ,SMA015VZKVZPP,CLNRSAMA015PP,CLNRSAMA015. Example questions: 'Restart Device','The keypad keyboard is not functioning correctly','Device resets',' crashes and reboots','Cannot receive calls','Soft reset','Device powers off on its own','The display screen is blank frozen flickering','Not receiving voicemail indicator','Device will not power on','Device has a black screen','Device freezes locks up unresponsive bricked','Device crashes and resets itself','Not receiving inbound call','Device does not ring vibrate during an incoming call','App freezes hangs','Cannot browse the Internet','App(s) crash reset the wireless device','Receiving voicemail indicator is delayed','Device is running slow','Trouble placing receiving phone calls','Device makes a clicking popping buzzing noise during a call','Receiving delayed messages (text picture video)'
+
+This document is about Samsung Galaxy A01 - Restart Device

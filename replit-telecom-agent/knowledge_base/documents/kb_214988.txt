@@ -1,0 +1,16 @@
+Google Pixel 2 - Turn App Permissions On / Off Google Pixel 2 - Turn App Permissions On / Off Here's how to turn permissions for installed apps on your Pixel 2 / 2 XL on or off.
+
+* Downloaded apps designed for Android 6.0 (Marshmallow) and up only ask for permission the first time you use a feature rather than asking for permissions out of context.
+* Turning off certain permissions may result in basic features no longer working as intended.
+
+1. From a Home screen, swipe up to display all apps.
+2. Navigate: Settings Apps & notifications .
+3. Tap Advanced .
+4. Tap Permissions manager .
+5. Tap the appropriate permission type to modify (e.g., Body Sensors, Microphone, Location, etc.).
+6. From the selected permission, tap any of the available apps (e.g., Google Play Services, My Verizon, etc.) to Allow or Deny. The image below is merely an example.
+7. If selecting 'Deny', from the 'If you deny this permission...' prompt, select 'Cancel' or 'Deny Anyway'.
+
+Description: This document is about Google Pixel 2 - Turn App Permissions On / Off. Following are the sku relate to this document:GA00143-US,GA00141-US,GA00142-US,GA00139-US,CLNRGOGA00151,GA00140-US,CLNRGOGA00140,CLNRGOGA00152,CLNRGOGA00141,GA00153-US,CLNRGOGA00153,CLNRGOGA00142,CLNRGOGA00154,CLNRGOGA00143,GA00152-US,GA00154-US,GA00151-US,CLNRGOGA00139. Example questions: 'Turn App Permissions On Off','App(s) crash reset the wireless device','An error has occurred while processing your last request','Device freezes locks up unresponsive bricked','Device crashes and resets itself'
+
+This document is about Google Pixel 2 - Turn App Permissions On / Off
