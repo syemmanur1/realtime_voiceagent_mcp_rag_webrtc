@@ -115,9 +115,9 @@ Run the app: python app.py(This will start on http://localhost:8081. Leave this 
 Terminal 2: Run the telecom_agent
 Navigate to the directory: cd telecom_agent
 Set environment variables:
-export GOOGLE_API_KEY='your-gemini-api-key'
+export GOOGLE_API_KEY='your-gemini-key'
 export MCP_URL='http://localhost:8081'
-export MCP_AUTH_TOKEN='your-strong-secret-token' 
+export MCP_AUTH_TOKEN='your-secret-token' 
 
 Run the app: python src/main.py (This will start on http://localhost:8080. Leave this terminal running.)
 
@@ -126,7 +126,7 @@ Navigate to the directory: cd webrtc_server
 Set environment variables:
 export AGENT_URL='http://localhost:8080'
 export MCP_URL='http://localhost:8081'
-export MCP_AUTH_TOKEN='your-strong-secret-token'
+export MCP_AUTH_TOKEN='your-secret-token'
 # Set providers to 'self-hosted' to test the mcp_server
 export STT_PROVIDER='self-hosted'
 export TTS_PROVIDER='self-hosted'
