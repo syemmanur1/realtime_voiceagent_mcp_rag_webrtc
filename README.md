@@ -50,7 +50,6 @@ mcp_server: The optional, heavy-lifting service for hosting your own AI models f
 telecom_agent: The core application that contains the agentic RAG pipeline and conversational logic.
 android_client: The native Android application that the end-user interacts with.
 
-https://g.co/gemini/share/d7d08594ad28
 
 https://docs.google.com/document/d/1hvfff2dgJmmAojzIb9qikhdiYlbY3NS354Cxzue_3Tg/edit?usp=sharing
 
