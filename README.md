@@ -75,9 +75,3 @@ Function: Hosts heavy models like Whisper (STT) and Chatterbox (TTS). It's desig
 
 Android Client (android_client)
 Role: The end-user interface.Function: A native Android application that connects to the webrtc_server, streams microphone audio, and plays the incoming audio response from the agent in real-time.
-
-
-4. Android Client Configuration
-Finally, update the android_client to point to your production webrtc_server.
-In MainActivity.kt, change the serverUrl variable to your production Cloud Run WebSocket URL.
-Note that Cloud Run does not support WebSockets out of the box; you may need to front it with a load balancer or use a different service like Google Kubernetes Engine for full WebRTC support in production.
